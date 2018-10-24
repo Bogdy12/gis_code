@@ -1,3 +1,8 @@
+---
+output:
+  word_document: default
+  html_document: default
+---
 ##Title
 
 
@@ -23,9 +28,12 @@ LondonMap <- EW[grep("^E09",EW@data$lad15cd),]
 LondonMapSF <- st_as_sf(LondonMap)
 #append the data to the geometries
 LondonMapSF <- append_data(LondonMapSF,LondonData, key.shp = "lad15cd", key.data = "New code", ignore.duplicates = TRUE)
+
 #plot a choropleth
 
 qtm(LondonMapSF, fill = "% Not Born in UK - 2011")
+
+
 
 
 
