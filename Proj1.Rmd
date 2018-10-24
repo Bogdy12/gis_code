@@ -2,22 +2,19 @@
 output:
   word_document: default
   html_document: default
+  pdf_document: default
 ---
 ##Title
 
-
-
-
-
 ####insert code
+
 ```{r}
 library(tidyverse)
 library(geojsonio)
 library(sf)
 library(tmap)
 library(tmaptools)
-install.packages("citr")
-library(citr)
+
 #read some data attributes
 LondonData <- read_csv("https://files.datapress.com/london/dataset/ward-profiles-and-atlas/2015-09-24T14:21:24/ward-profiles-excel-version.csv", na = "n/a")
 #read some geometries
@@ -32,10 +29,6 @@ LondonMapSF <- append_data(LondonMapSF,LondonData, key.shp = "lad15cd", key.data
 #plot a choropleth
 
 qtm(LondonMapSF, fill = "% Not Born in UK - 2011")
-
-
-
-
 
 ```
 
